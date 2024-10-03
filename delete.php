@@ -21,8 +21,7 @@ $sql->setCriteria($criteria);
 
 // processa a instrução sql
 echo $sql->getInstruction();
-
-echo "<br.\n";
+echo "<br>\n";
 
 
 
