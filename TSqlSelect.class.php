@@ -5,7 +5,7 @@
 
 final class TSqlSelect extends TSqlInstruction {
 
-    private $column; // array de colunas a serem retornadas.
+    private $columns; // array de colunas a serem retornadas.
 
     /*Método addColumn
     * adiciona uma coluna a ser retornada pelo SELECT
@@ -26,7 +26,7 @@ final class TSqlSelect extends TSqlInstruction {
         $this->sql = 'SELECT';
 
         //monta string com os nomes das colunas 
-        $this->sql .=implode(',',$this->columns);
+        $this->sql .= implode(',',$this->columns);
 
         //adiciona na clausula FROM o nome da tabela
         $this->sql .='FROM' . $this->entity;
@@ -47,13 +47,18 @@ final class TSqlSelect extends TSqlInstruction {
             // obtem a ordenação do SELECT
 
             if($order){
-                $this->sql
+                $this->sql.= 'ORDER BY'.$order;
             }
+            if($limit){
+                $this->sql .= 'LIMIT'.$limit;
+            }
+            if($offset){    
+                $this->sql .= 'OFFSET'.$offset;
         }
     }
+    return $this->sql;
+}
 
-
-
-
+}
 
 ?>
