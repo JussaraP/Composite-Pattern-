@@ -35,7 +35,7 @@ spl_autoload_register(function ($classe) {
     $sql->setEntity('aluno');
 
     // acrescenta todas as colunas a consulta
-    $sql-addColumn('*');
+    $sql->addColumn('*');
 
     // define o criterio de seleção dos dados
     $sql->setCriteria($criteria);
