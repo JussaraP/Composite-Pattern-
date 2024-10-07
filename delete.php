@@ -23,7 +23,4 @@ $sql->setCriteria($criteria);
 echo $sql->getInstruction();
 echo "<br>\n";
 
-
-
-
 ?>
